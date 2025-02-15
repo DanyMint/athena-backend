@@ -1,0 +1,8 @@
+logs
+.idea
+.env
+venv
+
+
+*__pycache__*
+admissions/migrations/
