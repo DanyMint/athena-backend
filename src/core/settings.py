@@ -16,10 +16,10 @@ from json import loads
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 load_dotenv()
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-SECRET_KEY = getenv("SECRET_KEY")
+from django.core.management.utils import get_random_secret_key
+
+SECRET_KEY = get_random_secret_key()
 DEBUG = bool(getenv("DEBUG"))
 
 ALLOWED_HOSTS = loads(getenv("ALLOWED_HOSTS"))
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        'NAME':  getenv("DB_NAME"),
-        'USER': getenv("DB_USER"),
-        'PASSWORD': getenv("DB_PASSWORD"),
-        'HOST': getenv("DB_HOST"),
-        'PORT': getenv("DB_PORT")
+        'NAME':  getenv("POSTGRES_DB"),
+        'USER': getenv("POSTGRES_USER"),
+        'PASSWORD': getenv("POSTGRES_PASSWORD"),
+        'HOST': getenv("POSTGRES_HOST"),
+        'PORT': getenv("POSTGRES_PORT")
     }
 }
 
