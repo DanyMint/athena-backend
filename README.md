@@ -1,3 +1,8 @@
+## ⚠️ **This repository is no longer supported.**
+
+Acutal project repository https://github.com/DanyMint/athena 
+
+
 # The backend part of Athena. 
 
 Athena is a small application to keep track of applicants. 
